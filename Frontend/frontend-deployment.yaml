@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app-deployment
+  labels:
+    app: frontend-client
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend-client
+  template:
+    metadata:
+      labels:
+        app: frontend-client
+    spec:
+      containers:
+      - name: sample-app
+        image: samielleuch/pfa-sample-app:0.0.1
+        ports:
+        - containerPort: 80
