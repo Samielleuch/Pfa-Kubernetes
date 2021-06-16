@@ -6,12 +6,13 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
+  - host: user1.serveron.xyz
+    http:
       paths:
-      - path: /frontend
-        pathType: Prefix
-        backend:
+      - backend:
           service:
             name: frontend-client-service
             port:
               number: 80
+        path: /
+        pathType: Prefix
