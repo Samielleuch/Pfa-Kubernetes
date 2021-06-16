@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: sample-app
-        image: samielleuch/pfa-sample-app:0.0.1
+        image: samielleuch/pfa-sample-app:0.0.3
         ports:
         - containerPort: 80
